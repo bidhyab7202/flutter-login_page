@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>main.dart</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #6a8759;}
+.s2 { color: #cc7832;}
+.s3 { color: #808080;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.dart</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">'package:animated_splash_screen/animated_splash_screen.dart'</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">'package:flutter/material.dart'</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">'Screens/login_page.dart'</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">'Screens/splashScreen.dart'</span><span class="s2">;</span>
+
+
+<span class="s2">void </span><span class="s0">main() {</span>
+  <span class="s0">runApp(</span><span class="s2">const </span><span class="s0">MyApp())</span><span class="s2">;</span>
+<span class="s0">}</span>
+
+<span class="s2">class </span><span class="s0">MyApp </span><span class="s2">extends </span><span class="s0">StatelessWidget {</span>
+  <span class="s2">const </span><span class="s0">MyApp({</span><span class="s2">super</span><span class="s0">.key})</span><span class="s2">;</span>
+
+  <span class="s3">// This widget is the root of your application.</span>
+  <span class="s0">@override</span>
+  <span class="s0">Widget build(BuildContext context) {</span>
+    <span class="s2">return </span><span class="s0">MaterialApp(</span>
+      <span class="s0">debugShowCheckedModeBanner: </span><span class="s2">false,</span>
+      <span class="s0">title: </span><span class="s1">'Flutter Demo'</span><span class="s2">,</span>
+      <span class="s0">theme: ThemeData(</span>
+        <span class="s3">// This is the theme of your application.</span>
+        <span class="s3">//</span>
+        <span class="s3">// TRY THIS: Try running your application with &quot;flutter run&quot;. You'll see</span>
+        <span class="s3">// the application has a blue toolbar. Then, without quitting the app,</span>
+        <span class="s3">// try changing the seedColor in the colorScheme below to Colors.green</span>
+        <span class="s3">// and then invoke &quot;hot reload&quot; (save your changes or press the &quot;hot</span>
+        <span class="s3">// reload&quot; button in a Flutter-supported IDE, or press &quot;r&quot; if you used</span>
+        <span class="s3">// the command line to start the app).</span>
+        <span class="s3">//</span>
+        <span class="s3">// Notice that the counter didn't reset back to zero; the application</span>
+        <span class="s3">// state is not lost during the reload. To reset the state, use hot</span>
+        <span class="s3">// restart instead.</span>
+        <span class="s3">//</span>
+        <span class="s3">// This works for code too, not just values: Most code changes can be</span>
+        <span class="s3">// tested with just a hot reload.</span>
+        <span class="s0">colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple)</span><span class="s2">,</span>
+        <span class="s0">useMaterial3: </span><span class="s2">true,</span>
+      <span class="s0">)</span><span class="s2">,</span>
+      <span class="s0">home:  AnimatedSplashScreen(splash: Icons.question_mark</span><span class="s2">,</span>
+          <span class="s0">backgroundColor: Colors.pink</span><span class="s2">,</span>
+          <span class="s0">duration:</span><span class="s4">3000</span><span class="s2">,</span>
+          <span class="s0">splashTransition: SplashTransition.rotationTransition</span><span class="s2">,</span>
+          <span class="s0">nextScreen: LoginPage())</span>
+    <span class="s0">)</span><span class="s2">;</span>
+  <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s2">class </span><span class="s0">MyHomePage </span><span class="s2">extends </span><span class="s0">StatefulWidget {</span>
+  <span class="s2">const </span><span class="s0">MyHomePage({</span><span class="s2">super</span><span class="s0">.key</span><span class="s2">, </span><span class="s0">required </span><span class="s2">this</span><span class="s0">.title})</span><span class="s2">;</span>
+
+  <span class="s3">// This widget is the home page of your application. It is stateful, meaning</span>
+  <span class="s3">// that it has a State object (defined below) that contains fields that affect</span>
+  <span class="s3">// how it looks.</span>
+
+  <span class="s3">// This class is the configuration for the state. It holds the values (in this</span>
+  <span class="s3">// case the title) provided by the parent (in this case the App widget) and</span>
+  <span class="s3">// used by the build method of the State. Fields in a Widget subclass are</span>
+  <span class="s3">// always marked &quot;final&quot;.</span>
+
+  <span class="s2">final </span><span class="s0">String title</span><span class="s2">;</span>
+
+  <span class="s0">@override</span>
+  <span class="s0">State&lt;MyHomePage&gt; createState() =&gt; _MyHomePageState()</span><span class="s2">;</span>
+<span class="s0">}</span>
+
+<span class="s2">class </span><span class="s0">_MyHomePageState </span><span class="s2">extends </span><span class="s0">State&lt;MyHomePage&gt; {</span>
+  <span class="s0">int _counter = </span><span class="s4">0</span><span class="s2">;</span>
+
+  <span class="s2">void </span><span class="s0">_incrementCounter() {</span>
+    <span class="s0">setState(() {</span>
+      <span class="s3">// This call to setState tells the Flutter framework that something has</span>
+      <span class="s3">// changed in this State, which causes it to rerun the build method below</span>
+      <span class="s3">// so that the display can reflect the updated values. If we changed</span>
+      <span class="s3">// _counter without calling setState(), then the build method would not be</span>
+      <span class="s3">// called again, and so nothing would appear to happen.</span>
+      <span class="s0">_counter++</span><span class="s2">;</span>
+    <span class="s0">})</span><span class="s2">;</span>
+  <span class="s0">}</span>
+
+  <span class="s0">@override</span>
+  <span class="s0">Widget build(BuildContext context) {</span>
+    <span class="s3">// This method is rerun every time setState is called, for instance as done</span>
+    <span class="s3">// by the _incrementCounter method above.</span>
+    <span class="s3">//</span>
+    <span class="s3">// The Flutter framework has been optimized to make rerunning build methods</span>
+    <span class="s3">// fast, so that you can just rebuild anything that needs updating rather</span>
+    <span class="s3">// than having to individually change instances of widgets.</span>
+    <span class="s2">return </span><span class="s0">Scaffold(</span>
+      <span class="s0">appBar: AppBar(</span>
+        <span class="s3">// TRY THIS: Try changing the color here to a specific color (to</span>
+        <span class="s3">// Colors.amber, perhaps?) and trigger a hot reload to see the AppBar</span>
+        <span class="s3">// change color while the other colors stay the same.</span>
+        <span class="s0">backgroundColor: Theme.of(context).colorScheme.inversePrimary</span><span class="s2">,</span>
+        <span class="s3">// Here we take the value from the MyHomePage object that was created by</span>
+        <span class="s3">// the App.build method, and use it to set our appbar title.</span>
+        <span class="s0">title: Text(widget.title)</span><span class="s2">,</span>
+      <span class="s0">)</span><span class="s2">,</span>
+      <span class="s0">body: Center(</span>
+        <span class="s3">// Center is a layout widget. It takes a single child and positions it</span>
+        <span class="s3">// in the middle of the parent.</span>
+        <span class="s0">child: Column(</span>
+          <span class="s3">// Column is also a layout widget. It takes a list of children and</span>
+          <span class="s3">// arranges them vertically. By default, it sizes itself to fit its</span>
+          <span class="s3">// children horizontally, and tries to be as tall as its parent.</span>
+          <span class="s3">//</span>
+          <span class="s3">// Column has various properties to control how it sizes itself and</span>
+          <span class="s3">// how it positions its children. Here we use mainAxisAlignment to</span>
+          <span class="s3">// center the children vertically; the main axis here is the vertical</span>
+          <span class="s3">// axis because Columns are vertical (the cross axis would be</span>
+          <span class="s3">// horizontal).</span>
+          <span class="s3">//</span>
+          <span class="s3">// TRY THIS: Invoke &quot;debug painting&quot; (choose the &quot;Toggle Debug Paint&quot;</span>
+          <span class="s3">// action in the IDE, or press &quot;p&quot; in the console), to see the</span>
+          <span class="s3">// wireframe for each widget.</span>
+          <span class="s0">mainAxisAlignment: MainAxisAlignment.center</span><span class="s2">,</span>
+          <span class="s0">children: &lt;Widget&gt;[</span>
+            <span class="s2">const </span><span class="s0">Text(</span>
+              <span class="s1">'You have pushed the button this many times:'</span><span class="s2">,</span>
+            <span class="s0">)</span><span class="s2">,</span>
+            <span class="s0">Text(</span>
+              <span class="s1">'</span><span class="s0">$_counter</span><span class="s1">'</span><span class="s2">,</span>
+              <span class="s0">style: Theme.of(context).textTheme.headlineMedium</span><span class="s2">,</span>
+            <span class="s0">)</span><span class="s2">,</span>
+          <span class="s0">]</span><span class="s2">,</span>
+        <span class="s0">)</span><span class="s2">,</span>
+      <span class="s0">)</span><span class="s2">,</span>
+      <span class="s0">floatingActionButton: FloatingActionButton(</span>
+        <span class="s0">onPressed: _incrementCounter</span><span class="s2">,</span>
+        <span class="s0">tooltip: </span><span class="s1">'Increment'</span><span class="s2">,</span>
+        <span class="s0">child: </span><span class="s2">const </span><span class="s0">Icon(Icons.add)</span><span class="s2">,</span>
+      <span class="s0">)</span><span class="s2">, </span><span class="s3">// This trailing comma makes auto-formatting nicer for build methods.</span>
+    <span class="s0">)</span><span class="s2">;</span>
+  <span class="s0">}</span>
+<span class="s0">}</span>
+</pre>
+</body>
+</html>

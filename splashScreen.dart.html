@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>splashScreen.dart</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #6a8759;}
+.s2 { color: #cc7832;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+splashScreen.dart</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">'dart:async'</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">'package:flutter/material.dart'</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">'package:loginpage/Screens/login_page.dart'</span><span class="s2">;</span>
+
+<span class="s2">class </span><span class="s0">SplashScreen </span><span class="s2">extends </span><span class="s0">StatefulWidget {</span>
+  <span class="s2">const </span><span class="s0">SplashScreen({Key? key}) : </span><span class="s2">super</span><span class="s0">(key: key)</span><span class="s2">;</span>
+
+  <span class="s0">@override</span>
+  <span class="s0">_SplashScreenState createState() =&gt; _SplashScreenState()</span><span class="s2">;</span>
+<span class="s0">}</span>
+
+<span class="s2">class </span><span class="s0">_SplashScreenState </span><span class="s2">extends </span><span class="s0">State&lt;SplashScreen&gt; {</span>
+  <span class="s0">@override</span>
+  <span class="s2">void </span><span class="s0">initState() {</span>
+    <span class="s2">super</span><span class="s0">.initState()</span><span class="s2">;</span>
+    <span class="s0">_navigateToHome()</span><span class="s2">;</span>
+  <span class="s0">}</span>
+
+  <span class="s0">_navigateToHome() async {</span>
+    <span class="s0">await Future.delayed(Duration(milliseconds: </span><span class="s3">2000</span><span class="s0">)</span><span class="s2">, </span><span class="s0">() {})</span><span class="s2">;</span>
+    <span class="s0">Navigator.pushReplacement(</span>
+      <span class="s0">context</span><span class="s2">,</span>
+      <span class="s0">MaterialPageRoute(builder: (context) =&gt; LoginPage())</span><span class="s2">,</span>
+    <span class="s0">)</span><span class="s2">;</span>
+  <span class="s0">}</span>
+
+  <span class="s0">@override</span>
+  <span class="s0">Widget build(BuildContext context) {</span>
+    <span class="s2">return </span><span class="s0">Scaffold(</span>
+      <span class="s0">body: Center(</span>
+        <span class="s0">child:Column(</span>
+          <span class="s0">mainAxisAlignment: MainAxisAlignment.center</span><span class="s2">,</span>
+
+       <span class="s0">children:[ Container(</span>
+        <span class="s0">height: </span><span class="s3">120</span><span class="s2">, </span><span class="s0">width: </span><span class="s3">120</span><span class="s2">, </span><span class="s0">color: Colors.blueGrey</span><span class="s2">,</span>
+          <span class="s0">child: Text(</span>
+            <span class="s1">'Log in'</span><span class="s2">,</span>
+            <span class="s0">style: TextStyle(</span>
+              <span class="s0">fontSize: </span><span class="s3">28</span><span class="s2">,</span>
+              <span class="s0">fontWeight: FontWeight.w200</span><span class="s2">,</span>
+            <span class="s0">)</span><span class="s2">,</span>
+          <span class="s0">)</span><span class="s2">,</span>
+        <span class="s0">)</span><span class="s2">,</span>
+  <span class="s0">]</span>
+        <span class="s0">)</span>
+      <span class="s0">)</span><span class="s2">,</span>
+    <span class="s0">)</span><span class="s2">;</span>
+  <span class="s0">}</span>
+<span class="s0">}</span>
+
+
+
+
+
+</pre>
+</body>
+</html>
